@@ -1,5 +1,5 @@
 ## What is this
-A website compiling all information about an actor.
+A website compiling all information about an actor.\
 Currently under development 🚀
 
 ## Getting Started
