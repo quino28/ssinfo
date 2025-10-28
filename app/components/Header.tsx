@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 const Header = () => {
@@ -10,11 +8,10 @@ const Header = () => {
           ssinfo
         </Link>
         <nav className="hidden md:flex space-x-6 text-sm">
-          <Link href="/About" className="hover:underline">About</Link>
-          <Link href="/history" className="hover:underline">History</Link>
-          <Link href="/calendar" className="hover:underline">Calendar</Link>
+          <Link href="/about" className="hover:underline">About</Link>
+          <Link href="/works" className="hover:underline">Works</Link>
+          <Link href="/schedule" className="hover:underline">Schedule</Link>
         </nav>
-
       </div>
     </header>
   );
