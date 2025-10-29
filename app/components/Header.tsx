@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link';
+import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
   return (
@@ -11,6 +14,7 @@ const Header = () => {
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/works" className="hover:underline">Works</Link>
           <Link href="/schedule" className="hover:underline">Schedule</Link>
+          <ThemeSwitch />
         </nav>
       </div>
     </header>
