@@ -27,3 +27,9 @@ body {
 .fc-theme-standard th {
     background-color: var(--your-desired-header-color) !important;
 }
+.fc-day-today {
+  background-color: #b4eee0 !important;
+}
+.dark .fc-day-today {
+    background-color: #078286 !important;
+}
