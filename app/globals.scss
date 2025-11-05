@@ -15,6 +15,12 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  .header-hamburger {
+    background: #333333;
+  }
+  .fc-day-today {
+    background-color: #078286 !important;
+  }
 }
 
 body {
@@ -29,7 +35,4 @@ body {
 }
 .fc-day-today {
   background-color: #b4eee0 !important;
-}
-.dark .fc-day-today {
-    background-color: #078286 !important;
 }

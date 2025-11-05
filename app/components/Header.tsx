@@ -22,6 +22,7 @@ const Header = () => {
         </button>
         <nav
           className={`
+            header-hamburger
             absolute top-full right-0 w-auto bg-white border-t border-gray-200
             flex flex-col items-start space-y-2 text-sm
             px-6 py-4 shadow-md z-10 md:hidden
