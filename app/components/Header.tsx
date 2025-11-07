@@ -40,14 +40,9 @@ const Header = () => {
           `}
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="hover:underline text-gray-700 dark:text-gray-300 w-full md:w-auto"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href={link.href} className="hover:underline text-gray-700 dark:text-gray-300 w-full md:w-auto">
               {link.label}
-            </a>
+            </Link>
           ))}
           <ThemeSwitch />
         </nav>
