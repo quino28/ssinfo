@@ -40,7 +40,7 @@ const Header = () => {
           `}
         >
           {navLinks.map((link) => (
-            <Link href={link.href} className="hover:underline text-gray-700 dark:text-gray-300 w-full md:w-auto">
+            <Link key={link.href} href={link.href} className="hover:underline text-gray-700 dark:text-gray-300 w-full md:w-auto">
               {link.label}
             </Link>
           ))}
