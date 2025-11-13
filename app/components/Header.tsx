@@ -9,7 +9,7 @@ const [isOpen, setIsOpen] = useState(false);
 const { resolvedTheme } = useTheme();
 const isDarkMode = resolvedTheme === "dark";
 
-const HumbergerEl = () => {
+const HamburgerEl = () => {
   return (
     <button
       className={`
@@ -70,7 +70,7 @@ const Header = () => {
         <Link href="/" className="text-lg font-bold">
           ssinfo
         </Link>
-        <HumbergerEl />
+        <HamburgerEl />
         <NavMenuEl />
       </div>
     </header>
