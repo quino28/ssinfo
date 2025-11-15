@@ -52,7 +52,7 @@ export default function SchedulePage() {
           ? { year: 'numeric', month: 'short' }
           : { year: 'numeric', month: 'long' }
         }
-        aspectRatio={ isMobile ? '0.7' : '1.6' }
+        aspectRatio={ isMobile ? 0.7 : 1.6 }
       />
     </div>
   )
