@@ -5,9 +5,9 @@ FROM node:23-bookworm AS builder
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN yarn install
 COPY . .
-RUN npm run build
+RUN yarn build
 
 # --- Production Stage ---
 FROM node:23-bookworm AS runner
@@ -18,7 +18,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/next.config.ts ./
 
-RUN npm install --omit=dev
+RUN yarn install --production
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
