@@ -1,22 +1,25 @@
-FROM node:23-bookworm AS builder
-
 # --- Build Stage ---
 FROM node:23-bookworm AS builder
 
-WORKDIR /app
+WORKDIR /ssinfo
 COPY package*.json ./
 RUN yarn install
+
+COPY prisma ./prisma
+RUN yarn prisma generate
+
 COPY . .
 RUN yarn build
 
 # --- Production Stage ---
 FROM node:23-bookworm AS runner
 
-WORKDIR /app
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/next.config.ts ./
+WORKDIR /ssinfo
+COPY --from=builder /ssinfo/.next ./.next
+COPY --from=builder /ssinfo/public ./public
+COPY --from=builder /ssinfo/package*.json ./
+COPY --from=builder /ssinfo/next.config.ts ./
+COPY --from=builder /ssinfo/prisma ./prisma
 
 RUN yarn install --production
 
