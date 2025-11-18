@@ -16,7 +16,7 @@ const Header = () => {
   `;
   const navLinks = [
      { href: "/about", label: "About" },
-     { href: "/works", label: "Works" },
+     { href: "/work", label: "Works" },
      { href: "/schedule", label: "Schedule" }
    ];
   const navClasses = `
