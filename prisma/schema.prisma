@@ -5,4 +5,14 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets   = ["native", "debian-openssl-3.0.x"]
+}
+
+model work {
+  id         Int     @id @default(autoincrement())
+  name       String
+  startDate  DateTime
+  endDate    DateTime
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 }
