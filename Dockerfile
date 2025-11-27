@@ -1,4 +1,4 @@
-FROM node:23-bookworm
+FROM node:23-alpine
 
 WORKDIR /ssinfo
 COPY package*.json ./
