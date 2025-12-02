@@ -1,8 +1,5 @@
-FROM node:23-alpine
+FROM node:23-bookworm
 
 WORKDIR /ssinfo
-COPY package*.json ./
-RUN yarn install
-
-COPY . .
-CMD ["yarn", "start"]
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile

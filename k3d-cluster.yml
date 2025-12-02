@@ -1,0 +1,15 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: dev
+servers: 1
+agents: 0
+ports:
+  - port: 30080:30080
+volumes:
+  - volume: /Users/quino/Work/ssinfo/app:/ssinfo/app
+  - volume: /Users/quino/Work/ssinfo/prisma:/ssinfo/prisma
+  - volume: /Users/quino/Work/ssinfo/tailwind.config.ts:/ssinfo/tailwind.config.ts
+  - volume: /Users/quino/Work/ssinfo/next.config.ts:/ssinfo/next.config.ts
+  - volume: /Users/quino/Work/ssinfo/package.json:/ssinfo/package.json
+  - volume: /Users/quino/Work/ssinfo/yarn.lock:/ssinfo/yarn.lock
