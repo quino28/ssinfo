@@ -27,47 +27,18 @@ spec:
       labels:
         app: nextjs
     spec:
+      initContainers:
+        - name: migrate
+          image: quino28/ssinfo
+          command: ["npx", "prisma", "migrate", "deploy"]
+          env:
+            - name: DATABASE_URL
+              value: "mysql://mysql:ssinfo@mysql:3306/development"
       containers:
         - name: nextjs
           image: quino28/ssinfo
           ports:
             - containerPort: 3000
-          volumeMounts:
-            - name: app-src
-              mountPath: /ssinfo/app
-            - name: prisma-src
-              mountPath: /ssinfo/prisma
-            - name: tailwind-config
-              mountPath: /ssinfo/tailwind.config.ts
-            - name: next-config
-              mountPath: /ssinfo/next.config.ts
-            - name: pkg-json
-              mountPath: /ssinfo/package.json
-            - name: yarn-lock
-              mountPath: /ssinfo/yarn.lock
-          command: ["yarn", "dev"]
-      volumes:
-        - name: app-src
-          hostPath:
-            path: /ssinfo/app
-            type: Directory
-        - name: prisma-src
-          hostPath:
-            path: /ssinfo/prisma
-            type: Directory
-        - name: tailwind-config
-          hostPath:
-            path: /ssinfo/tailwind.config.ts
-            type: File
-        - name: next-config
-          hostPath:
-            path: /ssinfo/next.config.ts
-            type: File
-        - name: pkg-json
-          hostPath:
-            path: /ssinfo/package.json
-            type: File
-        - name: yarn-lock
-          hostPath:
-            path: /ssinfo/yarn.lock
-            type: File
+          env:
+            - name: DATABASE_URL
+              value: "mysql://mysql:ssinfo@mysql:3306/development"

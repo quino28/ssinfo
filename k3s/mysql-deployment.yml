@@ -7,7 +7,6 @@ spec:
   - port: 3306
   selector:
     app: mysql
-  clusterIP: None
 
 ---
 
@@ -32,6 +31,12 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: root
+        - name: MYSQL_DATABASE
+          value: development
+        - name: MYSQL_USER
+          value: mysql
+        - name: MYSQL_PASSWORD
+          value: ssinfo
         ports:
         - containerPort: 3306
           name: mysql
